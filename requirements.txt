@@ -1,7 +1,7 @@
 streamlit
 langchain
-langchain-community
 langgraph
+langchain-community
 openai
 google-auth
 google-auth-oauthlib
@@ -9,3 +9,4 @@ google-api-python-client
 python-dotenv
 fastapi
 uvicorn
+dateparser
