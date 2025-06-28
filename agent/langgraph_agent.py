@@ -10,9 +10,14 @@ import pytz
 load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
-os.environ['OPENAI_API_KEY'] = openai_api_key
+if not openai_api_key:
+    raise ValueError("Missing OPENAI_API_KEY. Please make sure it's set in your .env file.")
+
+# Set the environment variable only if it's valid
+os.environ['OPENAI_API_KEY'] = str(openai_api_key)
 
 llm = ChatOpenAI(api_key=openai_api_key, temperature=0.7)
+
 
 conversation_state = {
     'stage': 'initial',  
